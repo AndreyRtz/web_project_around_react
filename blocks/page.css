@@ -1,0 +1,18 @@
+body {
+  background-color: #000000;
+  margin: 0;
+  display: block;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.page {
+
+  max-width: 880px;
+  margin: 45px auto 60px;
+  background-color: #000000;
+  color: #fff;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+}

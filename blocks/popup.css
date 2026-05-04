@@ -1,0 +1,236 @@
+.popup {
+  display: flex; 
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  align-items: center;
+   justify-content: center;
+  z-index: 1;
+  color: #000;
+
+  /* visibility: hidden; */
+  /* opacity: 0; */
+}
+
+.popup__image {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  display: block;
+}
+
+.popup_opened {
+  display: flex;
+}
+
+.popup__conteiner {
+width: 470px;
+display: flex;
+flex-direction: column;
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
+#deleteCard .popup__conteiner {
+  width: 430px;
+  height: 181px;
+  max-width: 430px;
+}
+
+.popup__content {
+  background-color: #ffffff;
+  border-radius: 10px;
+  position: relative;
+}
+
+#deleteCard .popup__content {
+  width: 430px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.popup__button {
+  font-size: 18px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.popup__button:hover{
+   opacity: 0.8;
+}
+
+.popup__button:disabled {
+  background-color: #fffefe;
+  cursor: default;
+  color: #999999;
+}
+
+.popup__button_close {
+  font-size: 40px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  cursor: pointer;
+}
+
+#deleteCard .popup__button_close {
+  position: absolute;
+  top: 10px;
+  right: -30px;
+  top: -50px;
+  z-index: 1;
+  border: none;
+  cursor: pointer;
+}
+
+.popup__title {
+  width: 330px;
+  font-family: "Inter-Black", sans-serif;
+  font-size: 24px;
+  margin: 0 36px;
+  padding: 34px 0 54px;
+}
+
+#deleteCard .popup__title {
+  flex-shrink: 0;
+  padding-bottom: 38px;
+}
+
+.popup__form {
+  width: 360px;
+  margin: auto;
+  border: 0;
+  padding: 0;
+}
+
+/* .popup__form-add {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+} */
+
+.popup__input_name {
+  width: 360px;
+  border: 0;
+ 
+  border-bottom: 1px solid #000;
+}
+
+.popup__input_title {
+  width: 360px;
+  border: 0;
+ 
+  border-bottom: 1px solid #000;
+}
+
+.popup__input_url {
+  width: 360px;
+  border: 0;
+  margin-top: 30px;
+  border-bottom: 1px solid #000;
+}
+
+
+
+.popup__input_type_error:invalid {
+  border-bottom: 1px solid #ff0000;
+}
+
+.popup__error_visible {
+  color: #ff0000;
+}
+
+.popup__input-error {
+  display: block;
+}
+
+.popup__input_hobbie {
+  width: 360px;
+  border: 0;
+  margin-top: 30px;
+  border-bottom: 1px solid #000;
+}
+
+.popup__button_save {
+  width: 100%;
+  background-color: #000;
+  padding: 10px;
+  margin-bottom: 40px;
+  margin-top: 30px;
+}
+
+#deleteCard .popup__button_save {
+  width: 358px;
+  height: 50px;
+  margin: 0;
+  
+}
+
+.popup__image-title {
+  color: #fff;
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 584px) {
+  .popup {
+    max-width: 300px;
+  }
+  .popup__conteiner {
+    max-width: 280px;
+    padding: 0 10px;
+  }
+
+  .popup__content {
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .popup__button_close {
+    right: -5px;
+    top: -40px;
+  }
+
+  .popup__title {
+    max-width: 240px;
+    margin: 0 22px;
+  }
+
+  .popup__form {
+    max-width: 240px;
+  }
+
+  .popup__input_name {
+    max-width: 240px;
+  }
+
+  .popup__input_hobbie {
+    max-width: 240px;
+  }
+
+  .popup__button_save {
+    max-width: 240px;
+  }
+
+  .popup__input_url {
+    max-width: 240px;
+  } 
+
+  .popup__input_title{
+    max-width: 240px;
+  } 
+}
+
