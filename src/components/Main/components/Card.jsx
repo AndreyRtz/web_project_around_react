@@ -1,14 +1,32 @@
-import { useState } from "react";
-
+import { useContext } from "react";
+import CurrentUserContext from "../../../contexts/CurrentUserContext.js";
 
 export default function Card(props) {
-  const { card, handleOpenPopup } = props;
-  const { name, link, isLiked: initialLiked  } = props.card;
+  const { card, handleOpenPopup, onCardLike, onCardDelete  } = props;
+  const { name, link, } = card;
 
-  const [isLiked, setIsLiked] = useState(initialLiked);
+   const{ currentUser }  = useContext(CurrentUserContext);
 
-  function handleLike() {
-    setIsLiked(!isLiked);
+   
+
+  // Verifica si el usuario actual le ha dado like
+  const isLiked =
+  Array.isArray(card.likes) &&
+  card.likes.some(i => i._id === currentUser?._id);
+
+  // Clase del botón
+  const cardLikeButtonClassName = `card__button-like ${
+    isLiked ? 'card__button-like_active' : ''
+  }`;
+  
+   // Handler LIKE
+  function handleLikeClick() {
+    onCardLike(card);
+  }
+
+  // Handler DELETE
+  function handleDeleteClick() {
+    onCardDelete(card);
   }
 
   // objeto imageComponent
@@ -27,18 +45,17 @@ export default function Card(props) {
         aria-label="Delete card"
         className="card__button-delete"
         type="button"
+        onClick={handleDeleteClick}
       />
 
       <div className="card__info">
         <h2 className="card__photo-name">{name}</h2>
 
-         <button
+          <button
           aria-label="Like card"
           type="button"
-          onClick={handleLike}
-          className={`card__button-like ${
-            isLiked ? "card__button_like_active" : ""
-          }`}
+          className={cardLikeButtonClassName}
+         onClick={handleLikeClick}
         />
       </div>
     </li>

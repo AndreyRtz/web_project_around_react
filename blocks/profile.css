@@ -6,15 +6,22 @@ padding-top: 40px;
 gap: 30px;
 }
 
-.profile__person-conteiner{
+.profile__person-container{
 position: relative;
+width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  cursor: pointer;
 }
 
 .profile__person {    
-  border-radius: 50%;
-  max-width: 120px;
+  width: 120px;
   height: 120px;
+  border-radius: 50%;
   object-fit: cover;
+  display: block;
 }
 
 .profile__person:hover {
